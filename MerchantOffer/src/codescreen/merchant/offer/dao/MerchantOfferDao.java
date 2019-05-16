@@ -10,24 +10,24 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList; 
 import java.util.List;
 
-import codescreen.merchant.sale.offer.Offer; 
+import codescreen.merchant.sale.data.offerdata.OfferRequestData; 
 
 public class MerchantOfferDao {
-	 public List<Offer> getAllOffers(){ 
+	 public List<OfferRequestData> getAllOffers(){ 
 	      
-	      List<Offer> OfferList = null; 
+	      List<OfferRequestData> OfferList = null; 
 	      try { 
 	         File file = new File("Offers.dat"); 
 	         if (!file.exists()) { 
-	            Offer Offer = new Offer(1, "Mahesh", "Teacher"); 
-	            OfferList = new ArrayList<Offer>(); 
+	            OfferRequestData Offer = new OfferRequestData(1, "Mahesh", "Teacher", null, null); 
+	            OfferList = new ArrayList<OfferRequestData>(); 
 	            OfferList.add(Offer); 
 	            saveOfferList(OfferList); 
 	         } 
 	         else{ 
 	            FileInputStream fis = new FileInputStream(file); 
 	            ObjectInputStream ois = new ObjectInputStream(fis); 
-	            OfferList = (List<Offer>) ois.readObject(); 
+	            OfferList = (List<OfferRequestData>) ois.readObject(); 
 	            ois.close(); 
 	         } 
 	      } catch (IOException e) { 
@@ -37,7 +37,7 @@ public class MerchantOfferDao {
 	      }   
 	      return OfferList; 
 	   } 
-	   private void saveOfferList(List<Offer> OfferList){ 
+	   private void saveOfferList(List<OfferRequestData> OfferList){ 
 	      try { 
 	         File file = new File("Offers.dat"); 
 	         FileOutputStream fos;  
