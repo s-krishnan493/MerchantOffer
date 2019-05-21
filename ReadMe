@@ -1,1 +1,20 @@
 
+Created Controller,Service and dao classes to handle the scenario.
+The structure is layout and it is not a full end to end working functionality.
+
+
+Crated Merchant Service class to handle 
+- create offer
+- delete offer
+- get available offers
+- get active offers  - reading offers from files
+
+
+Created controlller to handle the API requests
+
+Code Flow :
+
+Controller - > Service class -> Dao class
+
+
+Drawbacks or Improvements : I could have created it as maven dependency project to resolve spring dependencies and also add json jars.
