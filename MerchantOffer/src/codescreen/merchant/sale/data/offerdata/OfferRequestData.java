@@ -11,30 +11,31 @@ import javax.json.bind.annotation.JsonbProperty;
 public class OfferRequestData implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	@JsonbProperty("id")
-	private int id;
+	private String id;
+	
 	@JsonbProperty("name")
 	private String name;
-	@JsonbProperty("type")
-	private String type;
+	
 	@JsonbProperty("offerExpiryDate")
 	private Date offerExpiryDate;
+	
 	@JsonbProperty("offerDescription")
 	private String offerDescription;
 
-	public OfferRequestData(int id, String name, String type, Date offerExpiryDate, String offerDescription) {
+	public OfferRequestData(String id, String name, Date offerExpiryDate, String offerDescription) {
 		this.id = id;
 		this.name = name;
-		this.type = type;
 		this.offerExpiryDate = offerExpiryDate;
 		this.offerDescription = offerDescription;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -44,14 +45,6 @@ public class OfferRequestData implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getProfession() {
-		return type;
-	}
-
-	public void setProfession(String profession) {
-		this.type = profession;
 	}
 
 	public Date getOfferExpiryDate() {

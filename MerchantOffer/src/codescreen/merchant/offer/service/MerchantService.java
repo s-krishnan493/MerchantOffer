@@ -14,15 +14,15 @@ public interface MerchantService {
 
 	/*
 	 * 
-	 * @param offerId - offerId to retrieve all active offers
+	 * retrieve all active offers
 	 */
-	List<OfferRequestData> getActiveOffers(String offerId);
+	List<OfferRequestData> getActiveOffers();
 
 	/*
 	 * 
-	 * @param offerId - offerId to retrieve all available offers
+	 * retrieve all available offers
 	 */
-	List<OfferRequestData> getAvailableOffers(String offerId);
+	List<OfferRequestData> getAvailableOffers();
 
 	/*
 	 * 
@@ -30,4 +30,9 @@ public interface MerchantService {
 	 */
 	void cancelOffer(String OfferId);
 
+	/*
+	 * 
+	 * @param offerRequestData - to create new offer
+	 */
+	void createOffer(OfferRequestData offerRequestData);
 }
