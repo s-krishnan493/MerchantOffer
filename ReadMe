@@ -1,7 +1,5 @@
 
 Created Controller,Service and dao classes to handle the scenario.
-The structure is layout and it is not a full end to end working functionality.
-
 
 Crated Merchant Service class to handle 
 - create offer
