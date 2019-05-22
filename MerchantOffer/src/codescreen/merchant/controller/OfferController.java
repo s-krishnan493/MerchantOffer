@@ -28,23 +28,23 @@ public class OfferController extends AbstractOfferController {
 	MerchantService merchantService;
 
 	@GET
-	@Path("/users")
+	@Path("/useroffers")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<OfferRequestData> getAvailableOffers() {
 		return merchantService.getAvailableOffers();
 	}
 
 	@GET
-	@Path("/users")
+	@Path("/active")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<OfferRequestData> getActiveOffers() {
 		return merchantService.getActiveOffers();
 	}
 
-	@GET
-	@Path("/users")
+	@POST
+	@Path("/users/register")
 	@Produces(MediaType.APPLICATION_JSON)
-	public OfferResponseData registerStudent(@RequestBody OfferRequestData offerRequestData) {
+	public OfferResponseData registerOffer(@RequestBody OfferRequestData offerRequestData) {
 
 		merchantService.createOffer(offerRequestData);
 		OfferResponseData offerResponse = new OfferResponseData();
@@ -55,7 +55,7 @@ public class OfferController extends AbstractOfferController {
 	}
 
 	@DELETE
-	@Path("/users")
+	@Path("/users/delete")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String deleteOffer(@PathVariable("offerId") String offerId) {
 		merchantService.cancelOffer(offerId);
