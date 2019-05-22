@@ -44,7 +44,7 @@ public class OfferController extends AbstractOfferController {
 	@GET
 	@Path("/users")
 	@Produces(MediaType.APPLICATION_JSON)
-	public OfferResponseData registerStudent(@RequestBody OfferRequestData offerRequestData) {
+	public OfferResponseData createOffer(@RequestBody OfferRequestData offerRequestData) {
 
 		merchantService.createOffer(offerRequestData);
 		OfferResponseData offerResponse = new OfferResponseData();
